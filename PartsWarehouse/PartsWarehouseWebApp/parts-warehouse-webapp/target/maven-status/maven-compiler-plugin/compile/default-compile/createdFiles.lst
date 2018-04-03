@@ -1,0 +1,6 @@
+pl\wiktorjasica\pwwa\controllers\RegisterController.class
+pl\wiktorjasica\pwwa\controllers\WarehouseController.class
+pl\wiktorjasica\pwwa\controllers\HomePageController.class
+pl\wiktorjasica\pwwa\controllers\PartController.class
+pl\wiktorjasica\pwwa\controllers\UserController.class
+pl\wiktorjasica\pwwa\controllers\LoginController.class

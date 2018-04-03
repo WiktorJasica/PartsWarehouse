@@ -1,0 +1,11 @@
+pl\wiktorjasica\pwwa\model\User.class
+pl\wiktorjasica\pwwa\model\Role.class
+pl\wiktorjasica\pwwa\model\Key.class
+pl\wiktorjasica\pwwa\dao\WarehouseDao.class
+pl\wiktorjasica\pwwa\model\Warehouse.class
+pl\wiktorjasica\pwwa\annotation\UniqueUsername.class
+pl\wiktorjasica\pwwa\annotation\UniqueUsernameValidator.class
+pl\wiktorjasica\pwwa\dao\UserDao.class
+pl\wiktorjasica\pwwa\model\Part.class
+pl\wiktorjasica\pwwa\dao\RoleDao.class
+pl\wiktorjasica\pwwa\dao\PartDao.class

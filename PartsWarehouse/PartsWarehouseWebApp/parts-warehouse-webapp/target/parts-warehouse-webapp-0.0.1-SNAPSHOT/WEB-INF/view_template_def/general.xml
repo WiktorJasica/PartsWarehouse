@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<!-- Konfiguracja ksztaltu stronny wyswietlanej w wyszukiwarce -->
+<tiles-definitions>
+	<definition name="common" template="/WEB-INF/view_template_layout/classic.jsp"> <!-- Szablon strony -->
+		<put-attribute name="footer" value="/WEB-INF/view_template_layout/footer.jsp" />
+	</definition>
+	
+	<!-- Home Page -->
+	<definition name="home-page" extends="common">
+		<put-attribute name="title" value="Home Page" />
+		<put-attribute name="body" value="/WEB-INF/jsp_views/home-page.jsp" />
+		<put-attribute name="current" value="home-page"></put-attribute>
+	</definition>
+	
+	<!-- User Registration -->
+	<definition name="user-register" extends="common">
+		<put-attribute name="title" value="User Registration" />
+		<put-attribute name="body" value="/WEB-INF/jsp_views/user-register.jsp" />
+		<put-attribute name="current" value="user-register"></put-attribute>
+	</definition>
+	
+	<!-- User Login -->
+	<definition name="login" extends="common">
+		<put-attribute name="title" value="User Login" />
+		<put-attribute name="body" value="/WEB-INF/jsp_views/login.jsp" />
+		<put-attribute name="current" value="login"></put-attribute>
+	</definition>
+	
+	<!-- Users Page -->
+	<definition name="users" extends="common">
+		<put-attribute name="title" value="Users Page" />
+		<put-attribute name="body" value="/WEB-INF/jsp_views/users.jsp" />
+		<put-attribute name="current" value="users"></put-attribute>
+	</definition>
+		
+	<!-- My Warehouses -->
+	<definition name="my-warehouses" extends="common">
+		<put-attribute name="title" value="My Warehouses" />
+		<put-attribute name="body" value="/WEB-INF/jsp_views/my-warehouses.jsp" />
+		<put-attribute name="current" value="my-warehouses"></put-attribute>
+	</definition>
+		
+	<!-- User parts warehouse -->
+	<definition name="user-parts-warehouse" extends="common">
+		<put-attribute name="title" value="User Parts Warehouse" />
+		<put-attribute name="menu" value="/WEB-INF/view_template_layout/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp_views/user-parts-warehouse.jsp" />
+		<put-attribute name="current" value="user-parts-warehouse"></put-attribute>
+	</definition>
+
+
+</tiles-definitions>
+
