@@ -10,42 +10,37 @@
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
-
-
-	<!--Definiowanie ktore pakiety nie mają być skanowane -->
+	<!--Packages to scan -->
 	<context:component-scan base-package="pl.wiktorjasica.pwwa">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
-	<!-- Konfiguracja Data Source - zrodła danych bean ipmlementuje interfejs: 
-		javax.sql.DataSource -->
+	<!-- Data Source Configuration - implements interface: 	javax.sql.DataSource -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/partswarehouse" />
-		<property name="username" value="Wiktor" />
+		<property name="username" value="root" />
 		<property name="password" value="password" />
 	</bean>
 
-
-	<!-- Bean okreslajacy zachowanie EntityManagera -->
+	<!-- Bean that specify EntityManager behavior -->
 	<!--org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - 
-		klasa, która posiada metodę pozwalającą w automatyczny sposób tworzyć instancje 
-		obiektów odnosząc się do annotations-->
+		a class that has a method that allows you automaticly create instances by referring to annotations -->
 	<bean id="emf"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="dataSource" ref="dataSource" /> <!-- Odniesienie do beane ktory definiuje nasze zrodlo danych DataSource -->
-		<property name="packagesToScan" value="pl.wiktorjasica.pwwa.model" /> <!-- Pakiety w ktorych mamy Encje -->
+		<property name="dataSource" ref="dataSource" /> <!-- Reference to bean defined by DataSource -->
+		<property name="packagesToScan" value="pl.wiktorjasica.pwwa.model" /> <!-- Packages with entities  -->
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-				<property name="showSql" value="false" /> <!-- wypisywanie zapytan SQL -->
-				<property name="databasePlatform" value="org.hibernate.dialect.MySQL5Dialect" /> <!-- Skladnia SQL powiazana z MySQL DB -->
+				<property name="showSql" value="false" /> <!-- Writing out SQL queries -->
+				<property name="databasePlatform" value="org.hibernate.dialect.MySQL5Dialect" /> 
 			</bean>
 		</property>
 		<property name="jpaProperties"> 
 			<props>
-				<prop key="hibernate.hbm2ddl.auto">create-drop</prop> <!-- Okresla jak Hibnate ma sie zachowywac przy uruchomieniu aplikacji -->
+				<prop key="hibernate.hbm2ddl.auto">create-drop</prop> <!-- Describes behavior of Hibernate when running the applicatio -->
 				<prop key="hibernate.show_sql">true</prop> 
 			</props>
 		</property>
@@ -63,14 +58,12 @@
 		</property>
 	</bean>
 
-	<!-- Pakiety(Repozytoria) skanowane przez SpringData -->
+	<!-- Packages(repositories) scanned by SpringData-->
 	<jpa:repositories base-package="pl.wiktorjasica.pwwa.dao"
 		entity-manager-factory-ref="emf" />
 
-	<!-- Import konfiguracji SpringSecurity -->
+	<!-- Import SpringSecurity configuration  -->
 	<import resource="security.xml" />
 
 	<task:annotation-driven />
-
-
 </beans>

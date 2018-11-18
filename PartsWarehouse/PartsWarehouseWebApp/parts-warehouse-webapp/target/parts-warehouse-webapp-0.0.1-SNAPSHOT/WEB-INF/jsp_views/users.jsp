@@ -9,22 +9,14 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$('.nav-tabs a:first').tab('show');									 // 1) 
-	$(".triggerDelete").click(function(e){  							 // 2)
+	$('.nav-tabs a:first').tab('show');									 
+	$(".triggerDelete").click(function(e){  							 
 		e.preventDefault();
-		$("#modalDelete .deleteBtn").attr("href", $(this).attr("href")); // 3)
-		$("#modalDelete").modal(); 										 // 4) 
+		$("#modalDelete .deleteBtn").attr("href", $(this).attr("href")); 
+		$("#modalDelete").modal(); 										 
 	}); 	
 });
 
-/*
- * 	1) Po załadowaniu strony pierwsza zakladka staje sie aktywna
- 	2) Szukamy Przycisku o nzawie "triggerDelete" usuwajacego uzytkownika, 
- 	   kiedy nacisniemy przycisk wywolay funkcje, odpowiada za to metoda "click"
- 	3) Szukamy diva "modalDelete" i przycisku "deleteBtn" wewnatrz tego diva. 
- 	   Wstawiamy do atrybutu "href" z diva "modalDelete" atrybut "href" z przycisku "triggerDelete" ktory oznaczony jest przez "this"
- 	4) Wyswietlamy modal window "modalDelete"
- */
 </script>
 
 	<!-- Nav tabs -->

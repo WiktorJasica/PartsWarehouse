@@ -6,36 +6,32 @@
 		http://www.springframework.org/schema/security
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
-	<!-- Mozey uzywac annotations @PreAuthorize oraz @P zabezpieczajace aplikacje 
-		 przed wykonywaniem operacji przez nieupowaznionyh uzytkownikow   -->
+	<!-- Allows to use annotations @PreAuthorize and @P to secure application 
+		 from performing operation by unauthorized users   -->
 	<global-method-security pre-post-annotations="enabled" />
 
-<!-- Doajemy formularz logowania, operacje wylogowywania, mozliwosc uwierzytlninia za pomoca naglowkow HTTP -->
 
-<!-- Uzycie - "use-expressions" daje wiecej mozliwosci konfiguracji przy "intercept-url, oraz korzystania z expresions",
-	 Razem securityTagLibs daje nam mozlowisc konfiguracji security np: chowania opcji w mennu w zaleznosci czy jestes zalogowany 
-	 lub jaki masz profil dostepu (ROLE_ADMIN, ROLE_USER) -->
+<!-- Using "use-expressions" gives more possibilities during "intercept-url configuration, and allows to use expresions".
+	 In pair with securityTagLibs gives possibilities to configure security: hiding some menu options depends on user is authorized.-->
 	<http use-expressions="true"> 
-	<!-- Adres przechwytujacy i przekierywujacy na strone do logowania jest pierwszy ma priorytet - gdy klikniemy na zakladke "Users" -->
 		<intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')"/>
 		<intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/my-warehouses**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/user-parts-warehouse/**" access="hasRole('ROLE_USER')" />
-		<form-login login-page="/login"/> <!-- przekierowanie na strone z formularzem do logowania -->
-		<logout logout-url="/logout"/> <!-- wylogowywanie -->
+		<form-login login-page="/login"/> <!-- redirect to login page -->
+		<logout logout-url="/logout"/> 
 	</http>
 
 	<authentication-manager>
 		<authentication-provider>
 		
-		<!-- Haslo nie bedzie widoczne przy wpisywaniu -->
+		<!-- Password is not visible while writing  -->
 		<password-encoder hash="bcrypt"/>
 					
-		<!--Dynamiczne pobieranie danych na temat "usera" z BazyDanych  -->
-		<!-- "jdbc-user-service"- gotowa implementacja, która pozwala obsługiwać uwierzytelnianie z użyciem bazy danych ustawiając
-			  jedynie kilka niezbędnych atrybutów -->
-		<!-- "authorities-by-username-query" - zapytanie ktore dla okreslonego uzytkownika pobiera nam liste rol ktore on posiada -->
-		<!-- "users-by-username-query" - Spring weryfikuje czy podane dane sa zgodne z tymi pobrnymi z bazy danych -->
+		<!--  Dynamic download of data about the "user" from the Database  -->
+		<!-- "jdbc-user-service"-  implementation, which allows to use authentication with data base -->
+		<!-- "authorities-by-username-query" - query for ROLES of the user  -->
+		<!-- "users-by-username-query" - Spring verifies if the given data is compatible with those retrieved from the database -->
 			<jdbc-user-service data-source-ref="dataSource"
 				authorities-by-username-query="select app_user.name, Role.name from app_user           
 											   join app_user_Role on app_user.id = app_user_Role.users_id
@@ -44,6 +40,4 @@
 				users-by-username-query= "select name, password, enabled from app_user where name=?" /> 
 		</authentication-provider>
 	</authentication-manager>
-
-
 </beans:beans>

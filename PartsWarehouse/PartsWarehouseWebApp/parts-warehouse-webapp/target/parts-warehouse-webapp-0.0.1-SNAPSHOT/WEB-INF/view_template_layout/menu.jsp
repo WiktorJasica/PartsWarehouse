@@ -1,15 +1,15 @@
 <%@page import="org.apache.tomcat.util.descriptor.tld.TaglibXml"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- Dodajemy biblioteki TagLib -->
+<!-- TagLib libraries -->
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ include file="../view_template_layout/taglib.jsp"%>
 
 <script type="text/javascript">
 	$(document).ready(
-			function() { //When dovument ready call this funtion
+			function() { 
 				$(".addForm").validate(
-						//Find form with cals name "registrationForm and "validate()"-this is function from validation plugin
+						
 						{
 							rules : {
 								name : {
@@ -158,7 +158,3 @@
 	</tr>
 </table>
 </div>
-
-
-
-

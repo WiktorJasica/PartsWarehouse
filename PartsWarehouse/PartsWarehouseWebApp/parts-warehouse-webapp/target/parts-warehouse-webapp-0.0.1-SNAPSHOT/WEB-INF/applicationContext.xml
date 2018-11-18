@@ -7,19 +7,16 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-	<!--KONFIGURACJA applicationContext -->
+	<!-- ApplicationContext Configuration -->
 
-	<context:component-scan base-package="pl.wiktorjasica.pwwa.controllers" />	<!--Pakiety skanowane przez Springa -->
-	<context:annotation-config />												<!-- Pakiety ktore zostana skonfigutrowane recznie tez beda korzystac z adnotacji -->
-
-	<!--Adnotacja ta rejestruje nowe komponenty, jednym z nich jest "LocalValidatorFactoryBean" iplementujacy validator interface,
-	 	mozemy uzywac walidacji nad polami naszych encji   -->
-	<mvc:annotation-driven/>
+	<context:component-scan base-package="pl.wiktorjasica.pwwa.controllers" />	<!-- Packages scanned by Springa -->
+	<context:annotation-config /><!-- Activation applied annotations in already registered beans in application context. -->									
+	<mvc:annotation-driven/> <!-- Support for declrative validation via @Valid -->
 
 	
-	<!-- Konfiguracja Tiles -->
+	<!-- Tiles Configuration-->
 
-	<!-- Miejsce w projekcie gdzie definiowane są Apache Tiles -->
+	<!-- Place in the project where Apache Tiles are configured -->
 	<bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<property name="definitions">
@@ -29,14 +26,14 @@
 		</property>
 	</bean>
 
-	<!-- Integracja Apache Tiles ze Springiem -->
+	<!-- Integration Apache Tiles with Spring -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.tiles3.TilesView" />
 	</bean>
 	
-	<!-- Konfiguracja View Resolwera -->
+	<!-- View Resolwera Configuration-->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">

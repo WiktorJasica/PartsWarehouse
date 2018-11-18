@@ -3,9 +3,9 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
-<!-- Konfiguracja ksztaltu stronny wyswietlanej w wyszukiwarce -->
+<!-- Main configuration of the pages layout -->
 <tiles-definitions>
-	<definition name="common" template="/WEB-INF/view_template_layout/classic.jsp"> <!-- Szablon strony -->
+	<definition name="common" template="/WEB-INF/view_template_layout/classic.jsp"> <!-- page template -->
 		<put-attribute name="footer" value="/WEB-INF/view_template_layout/footer.jsp" />
 	</definition>
 	
@@ -51,7 +51,6 @@
 		<put-attribute name="body" value="/WEB-INF/jsp_views/user-parts-warehouse.jsp" />
 		<put-attribute name="current" value="user-parts-warehouse"></put-attribute>
 	</definition>
-
 
 </tiles-definitions>
 

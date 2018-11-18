@@ -1,7 +1,7 @@
 <%@page import="org.apache.tomcat.util.descriptor.tld.TaglibXml"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- Dodajemy biblioteki TagLib -->
+<!-- TagLib libraries -->
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ include file="../view_template_layout/taglib.jsp"%>
 
@@ -9,14 +9,14 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$(".triggerDelete").click(function(e){  							 // 1)
+	$(".triggerDelete").click(function(e){  							 
 		e.preventDefault();
-		$("#modalDelete .deleteBtn").attr("href", $(this).attr("href")); // 2)
-		$("#modalDelete").modal(); 										 // 3) 
+		$("#modalDelete .deleteBtn").attr("href", $(this).attr("href")); 
+		$("#modalDelete").modal(); 										 
 	}); 
 	$(".warehouseForm").validate(
 			{
-				rules:{													 // 4)
+				rules:{													 
 					name:{
 						required : true,
 						minlength: 1,
@@ -24,7 +24,7 @@ $(document).ready(function(){
 					}
 				},
 				highlight: function(element){
-					$(element).closest('.form-group').removeClass('has-success').addClass('has-error'); // 5)
+					$(element).closest('.form-group').removeClass('has-success').addClass('has-error'); 
 				},
 				unhighlight: function(element){
 					$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
@@ -33,17 +33,6 @@ $(document).ready(function(){
 	);
 });
 
-/*
- * 	
- 	1) Szukamy Przycisku o nzawie "triggerDelete" usuwajacego uzytkownika, 
- 	   kiedy nacisniemy przycisk wywolay funkcje, odpowiada za to metoda "click"
- 	2) Szukamy diva "modalDelete" i przycisku "deleteBtn" wewnatrz tego diva. 
- 	   Wstawiamy do atrybutu "href" z diva "modalDelete" atrybut "href" z przycisku "triggerDelete" ktory oznaczony jest przez "this"
- 	3) Wyswietlamy modal window "modalDelete"
- 	4) Validacja pola name
- 	5) Gdy wpisane dane nie sa zgodne z regulami valdacji pole podswietla sie na czerwono, gdy wpisane dane sa poprawne 
- 	   pole podswietla sie na zielono 
- */
 </script>
 
 <!-- Button - trigger to modal window "Add Warehouse"  -->

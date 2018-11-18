@@ -5,7 +5,7 @@
 	
 	<display-name>parts-warehouse-webapp/WEB-INF/jsp/</display-name>
 
-	<!-- Konfiguracja Servlet -->
+	<!-- Servlet Configuration-->
 	<servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -31,7 +31,7 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-	<!-- Filtry do uzywania polskich znakow -->
+	<!-- Filters for using UTF-8-->
 	<filter>
 		<filter-name>characterEncodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -50,9 +50,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
-	<!-- Filtry do Spring Security - kazde zapytanie przechodzi przez zestaw 
-		kryteriow, ktore moga odmowic dostepu, udzielic dostepu lub przekazac decyzje 
-		dalej. -->
+	<!-- Spring Security filters -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -63,8 +61,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
-	<!-- Zabezpieczenie przed "Cross Site Scripting" czyli wpisaniu do formularza szkodliwego 
-		kodu w javaScript -->
+	<!-- "Cross Site Scripting" protection -->
 	<context-param>
 		<param-name>defaultHtmlEscape</param-name>
 		<param-value>true</param-value>

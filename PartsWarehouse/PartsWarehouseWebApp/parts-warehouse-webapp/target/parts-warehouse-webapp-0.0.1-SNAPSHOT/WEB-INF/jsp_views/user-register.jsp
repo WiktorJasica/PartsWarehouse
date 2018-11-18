@@ -1,12 +1,13 @@
 <%@page import="org.apache.tomcat.util.descriptor.tld.TaglibXml"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- Dodajemy biblioteki TagLib -->
+<!-- TagLib libraries -->
 <%@ include file="../view_template_layout/taglib.jsp"%>
 
+<!-- Registration Form -->
 <form:form commandName="user" cssClass="form-horizontal registrationForm">
 
-	<!-- Wyswietlenie komunikatu o tym ze rejestracja przebiegla poprawnie -->
+	<!-- Displaying a message that the registration proceeded correctly -->
 	<c:if test="${success eq true}">
 		<div class="alert alert-success">Registration successfull</div>
 	</c:if>
@@ -41,8 +42,8 @@
 </form:form>
 
 <script type="text/javascript">
-$(document).ready(function(){      		//When dovument ready call this funtion
-	$(".registrationForm").validate(		//Find form with cals name "registrationForm and "validate()"-this is function from validation plugin
+$(document).ready(function(){      		
+	$(".registrationForm").validate(		
 		{
 			rules:{
 				name:{

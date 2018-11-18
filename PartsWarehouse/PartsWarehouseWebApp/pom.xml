@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>pl.wiktorjasica.pwwa</groupId>
@@ -12,7 +13,7 @@
 
 	<dependencies>
 
-		<!--Spring Framework Configuration-->
+		<!--Spring Framework Configuration -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -30,7 +31,7 @@
 			<artifactId>spring-context</artifactId>
 			<version>4.3.10.RELEASE</version>
 		</dependency>
-		
+
 		<!-- Libraries for logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -42,7 +43,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.31</version>
+			<version>8.0.11</version>
 		</dependency>
 
 		<dependency>
@@ -88,8 +89,8 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>3.2.3.RELEASE</version>
 		</dependency>
-		
-		<!--  securityTagLib - libraries in .jsp files -->
+
+		<!-- securityTagLib - libraries in .jsp files -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>

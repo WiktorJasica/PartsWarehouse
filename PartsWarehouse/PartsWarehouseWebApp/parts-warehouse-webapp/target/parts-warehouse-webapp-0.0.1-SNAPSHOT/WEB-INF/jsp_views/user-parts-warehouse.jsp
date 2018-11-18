@@ -1,16 +1,9 @@
 <%@page import="org.apache.tomcat.util.descriptor.tld.TaglibXml"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- Dodajemy biblioteki TagLib -->
+<!-- TagLib libraries -->
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ include file="../view_template_layout/taglib.jsp"%>
-
-<!-- Objasnienia tagow -->
-<!-- <thead> tag uzywany do grupowania elementow tabeli, laczy sie z <tfoot> i <tbody>. ozemy dzieki temu scrolowac tylko <tbody> -->
-<!-- <table> - Tworzymy tabele -->
-<!-- <tr> -  Tworzymy wiersz w tabeli -->
-<!-- <th> -  Nazwa kolumny w tabeli -->
-<!-- <td> - Standardowa komorka z danymi w tabeli -->
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -22,9 +15,9 @@ $(document).ready(function(){
 		$("#valManufacturer").val($(this).attr("data-manu"));
 		$("#valPrice").val($(this).attr("data-price"));
 		$("#valQuantity").val($(this).attr("data-quantity"));
-		$("#modalEdit").modal(); 										 // 3) 
+		$("#modalEdit").modal(); 										 
 	}); 	
-	$(".editForm").validate(				//Find form with cals name "registrationForm and "validate()"-this is function from validation plugin
+	$(".editForm").validate(				
 			{
 				rules:{
 					name:{
@@ -64,16 +57,9 @@ $(document).ready(function(){
 		);		
 });
 
-/*
- * 	
- 	1) Szukamy linku o nzawie "triggerEdit" usuwajacego uzytkownika, 
- 	   kiedy nacisniemy przycisk wywolay funkcje, odpowiada za to metoda "click"
- 	2) Szukamy diva "modalEdit" i przycisku "deleteBtn" wewnatrz tego diva. 
- 	   Wstawiamy do atrybutu "href" z diva "modalDelete" atrybut "href" z przycisku "triggerDelete" ktory oznaczony jest przez "this"
- 	3) Wyswietlamy modal window "modalDelete"
- */
 </script>
 
+<!-- Warehouse Table -->
 <table class="table table-bordered table-hover table-striped">
 
 	<thead>

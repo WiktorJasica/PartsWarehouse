@@ -12,24 +12,22 @@
 
 	<!--Packages to scan -->
 	<context:component-scan base-package="pl.wiktorjasica.pwwa">
-		<context:exclude-filter type="annotation"
-			expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
 	<!-- Data Source Configuration - implements interface: 	javax.sql.DataSource -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/partswarehouse" />
-		<property name="username" value="Wiktor" />
-		<property name="password" value="password" />
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/partswarehouse?useSSL=false&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+		<property name="username" value="root"/>
+		<property name="password" value="password"/>
 	</bean>
 
 	<!-- Bean that specify EntityManager behavior -->
 	<!--org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - 
 		a class that has a method that allows you automaticly create instances by referring to annotations -->
-	<bean id="emf"
-		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" /> <!-- Reference to bean defined by DataSource -->
 		<property name="packagesToScan" value="pl.wiktorjasica.pwwa.model" /> <!-- Packages with entities  -->
 		<property name="jpaVendorAdapter">
@@ -48,10 +46,10 @@
 			<bean class="org.hibernate.jpa.HibernatePersistenceProvider" />
 		</property>
 	</bean>
-	<bean
-		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
-	<bean
-		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+	
+		
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 		<property name="entityManagerFactory" ref="emf">
@@ -59,8 +57,7 @@
 	</bean>
 
 	<!-- Packages(repositories) scanned by SpringData-->
-	<jpa:repositories base-package="pl.wiktorjasica.pwwa.dao"
-		entity-manager-factory-ref="emf" />
+	<jpa:repositories base-package="pl.wiktorjasica.pwwa.dao" entity-manager-factory-ref="emf" />
 
 	<!-- Import SpringSecurity configuration  -->
 	<import resource="security.xml" />

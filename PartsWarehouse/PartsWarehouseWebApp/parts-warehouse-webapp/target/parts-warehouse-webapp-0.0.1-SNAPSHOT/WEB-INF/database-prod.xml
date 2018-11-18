@@ -9,8 +9,8 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd">
 
-<!-- Konfiguracja Data Source - zrodła danych bean ipmlementuje interfejs: 
-		javax.sql.DataSource -->
+<!-- Configuration for production - Heroku -->
+<!-- Data Source Configuration - implements interface: 	javax.sql.DataSource -->
 	 <bean class="java.net.URI" id="dbUrl">
       <constructor-arg value="#{systemEnvironment['DATABASE_URL']}" />
    </bean>
@@ -47,12 +47,9 @@
 		</property>
 	</bean>
 	
-	
-	<!-- Pakiety(Repozytoria) skanowane przez SpringData-->
 	<jpa:repositories base-package="pl.wiktorjasica.pwwa.dao"
 		entity-manager-factory-ref="emf" />
 		
-	<!-- Import konfiguracji SpringSecurity  -->
 	<import resource="security.xml"/>
 		
 	<task:annotation-driven/>

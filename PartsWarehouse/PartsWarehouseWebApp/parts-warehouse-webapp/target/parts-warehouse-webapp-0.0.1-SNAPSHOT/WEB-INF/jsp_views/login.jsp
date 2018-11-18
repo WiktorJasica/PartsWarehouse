@@ -1,11 +1,11 @@
 <%@page import="org.apache.tomcat.util.descriptor.tld.TaglibXml"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- Dodajemy biblioteki TagLib -->
+<!--TagLib libraries-->
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ include file="../view_template_layout/taglib.jsp"%>
 
-<!-- Wygląd strony do logowania -->
+<!-- Style of login page -->
 <style>
 
 .form-signin {
@@ -36,8 +36,8 @@
 }
 </style>
 
-<!-- Formularz uzupełniony danymi ze strony logowania SpringSecurity -->
-<!-- Zostały dodane parametry takie jak: action="/parts-warehouse-webapp/j_spring_security_check" method="POS;
+<!--"Login form" completed with data from the SpringSecurity login page -->
+<!-- There were added parameters such as: action="/parts-warehouse-webapp/j_spring_security_check" method="POS;
  	type="text" id="j_username" name="j_username"; type="password" id = "j_password" name="j_password"-->
  	
  <body class="text-center" >

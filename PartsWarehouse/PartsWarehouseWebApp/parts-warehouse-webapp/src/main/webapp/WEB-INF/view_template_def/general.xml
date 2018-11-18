@@ -6,6 +6,7 @@
 <!-- Main configuration of the pages layout -->
 <tiles-definitions>
 	<definition name="common" template="/WEB-INF/view_template_layout/classic.jsp"> <!-- page template -->
+		<put-attribute name="nav_bar" value="/WEB-INF/view_template_layout/nav_bar.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/view_template_layout/footer.jsp" />
 	</definition>
 	
