@@ -11,7 +11,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+		
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -31,9 +31,12 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+	
 	<!-- Inserting title of the page -->
 	<title><tiles:getAsString name="title"></tiles:getAsString></title>
+	
+	<!-- Own css file -->
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/main_style.css" type="text/css" />
 </head>
 
 <textras:useAttribute name="current" />
@@ -44,30 +47,31 @@
 	
 
 	<!-- Inserting body -->
-	<div class="container-fluid">
-		<div class="row">
-		
-				<c:if test="${current=='user-parts-warehouse'}">
-					<div class="col-xs-12 col-md-6" >
-						<tiles:insertAttribute name="menu" />
-					</div>
-				</c:if>
-				
-				<div class="col-xs-12 ${current=='user-parts-warehouse' ? 'col-md-6' : ''}">
-					<tiles:insertAttribute name="body" />
-				</div>	
+	<div id="main_page">
+		<div class="container-fluid">
+			<div class="row">
+			
+					<c:if test="${current=='user-parts-warehouse'}">
+						<div class="col-xs-12 col-md-6" >
+							<tiles:insertAttribute name="menu" />
+						</div>
+					</c:if>
+					
+					<div class="col-xs-12 ${current=='user-parts-warehouse' ? 'col-md-6' : ''}">
+						<tiles:insertAttribute name="body" />
+					</div>	
+			</div>
+		</div>
+			
+		<!-- Inserting footer -->
+		<div class="container-fluid">
+			<div class="row">
+				<br> <br>
+					<footer class="text-center">
+						<tiles:insertAttribute name="footer" />
+					</footer>
+			</div>
 		</div>
 	</div>
-		
-	<!-- Inserting footer -->
-	<div class="container-fluid">
-		<div class="row">
-			<br> <br>
-				<footer class="text-center">
-					<tiles:insertAttribute name="footer" />
-				</footer>
-		</div>
-	</div>
-
 </body>
 </html>
