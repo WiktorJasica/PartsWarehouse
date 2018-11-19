@@ -36,7 +36,7 @@
 	<title><tiles:getAsString name="title"></tiles:getAsString></title>
 	
 	<!-- Own css file -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/main_style.css" type="text/css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/web_content/css/main_style.css" type="text/css" />
 </head>
 
 <textras:useAttribute name="current" />
