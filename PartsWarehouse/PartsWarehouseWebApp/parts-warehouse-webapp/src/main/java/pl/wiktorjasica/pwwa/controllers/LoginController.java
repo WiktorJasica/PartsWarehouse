@@ -27,7 +27,6 @@ public class LoginController {
 	 */
 	@RequestMapping(value="/j_spring_security_check",method=RequestMethod.POST)
 	public String doLogin(RedirectAttributes redirectAttribute) {
-		System.out.println("logged_in");
 		redirectAttribute.addFlashAttribute("success", true);
 		return "redirect:/";
 	}
