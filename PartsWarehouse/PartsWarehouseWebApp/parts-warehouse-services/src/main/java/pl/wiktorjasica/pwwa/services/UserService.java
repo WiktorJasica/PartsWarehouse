@@ -35,32 +35,16 @@ public class UserService extends AbstractService<Long, User> {
 	private RoleDao roleDao;
 	
 	@Autowired
-	private WarehouseDao warehouseDao;
+	private WarehouseDao warehouseDao;	
 	
-		
-	/**
-	 * This method finds user by his id and associated with him warehouses
-	 * 
-	 * @param id
-	 * 			unique id of user to find 
-	 * @return 
-	 * 			User object with list of associated warehouses
-	 * 
-	 */
-	public User findUserWithWarehouses(Long id) {
-		User user = getById(id);
-		List<Warehouse> warehouses = warehouseDao.findByUser(user);	
-		user.setWarehouses(warehouses);
-		return user;
-	}
-	
+
 	/**
 	 * This method finds all users that are registered and all warehouses for each of them
 	 * 
 	 * @return Registered users and their warehouses
 	 */
 	public Iterable <User> findUsersWithWarehouses(){
-		Iterable<User> users = getRepository().findAll();
+		Iterable<User> users = getAll();
 		for(User user :users) {
 			List<Warehouse> warehouses = warehouseDao.findByUser(user);	
 			user.setWarehouses(warehouses);
@@ -106,4 +90,5 @@ public class UserService extends AbstractService<Long, User> {
 	protected CrudRepository<User, Long> getRepository() {
 		return userDao;
 	}
+	
 }

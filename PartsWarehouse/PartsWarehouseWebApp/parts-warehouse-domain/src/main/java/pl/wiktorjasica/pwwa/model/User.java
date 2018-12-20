@@ -59,6 +59,20 @@ public class User {
 	private List<Warehouse> warehouses;
 
 	
+	//Constructors
+	public User() {
+	}
+	
+	public User(Long id, String name, String email, String password, boolean enabled, List<Warehouse> warehouses) {
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.enabled = enabled;
+		this.warehouses = warehouses;
+	}
+
+
 	// Getters and Setters
 	public Long getId() {
 		return id;

@@ -11,7 +11,7 @@ import pl.wiktorjasica.pwwa.model.Warehouse;
  * Warehouse Data Access Object Interface
  * 
  */
-public interface WarehouseDao  extends CrudRepository <Warehouse, Long>{
+public interface WarehouseDao  extends CrudRepository <Warehouse, Long> {
 	
 	/**
 	 * This method searches warehouses for specific user 
