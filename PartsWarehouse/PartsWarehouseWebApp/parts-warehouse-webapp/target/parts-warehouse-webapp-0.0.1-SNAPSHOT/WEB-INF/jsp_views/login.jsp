@@ -37,7 +37,7 @@
 </style>
 
 <!--"Login form" completed with data from the SpringSecurity login page -->
-<!-- There were added parameters such as: action="/parts-warehouse-webapp/j_spring_security_check" method="POS;
+<!-- There were added parameters such as: action="/parts-warehouse-webapp/j_spring_security_check" method="POST;
  	type="text" id="j_username" name="j_username"; type="password" id = "j_password" name="j_password"-->
  	
  <body class="text-center" >

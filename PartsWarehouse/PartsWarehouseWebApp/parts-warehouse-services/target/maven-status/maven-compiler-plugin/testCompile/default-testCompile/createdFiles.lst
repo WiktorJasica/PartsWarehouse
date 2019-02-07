@@ -1,1 +1,2 @@
-org\parts\warehouse\services\AppTest.class
+pl\wiktorjasica\pwwa\services\PartServiceTest.class
+pl\wiktorjasica\pwwa\services\WarehouseServiceTest.class
