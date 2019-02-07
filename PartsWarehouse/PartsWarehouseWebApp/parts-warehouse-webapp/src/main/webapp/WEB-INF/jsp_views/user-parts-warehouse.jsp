@@ -111,7 +111,7 @@
 			<th class="col-xs-1">#</th>
 			<th class="col-xs-3">Name</th>
 			<th class="col-xs-4">Manufacturer</th>
-			<th class="col-xs-2">Price</th>
+			<th class="col-xs-2">Price [pln]</th>
 			<th class="col-xs-2">Quantity</th>
 		</tr>
 	</thead>
