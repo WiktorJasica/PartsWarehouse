@@ -72,7 +72,7 @@
 <!-- "Add Part" form-->
 <div class="container-fluid">
 	<div class="row">
-		<form:form action="/parts-warehouse-webapp/user-parts-warehouse/add/${warehouse.id}" commandName="part" cssClass="form-horizontal addForm" method="post">
+		<form:form action="/user-parts-warehouse/add/${warehouse.id}" commandName="part" cssClass="form-horizontal addForm" method="post">
 	
 			<div class="form-group">
 				<label for="name" class="col-sm-2 control-label">Name:</label>
@@ -120,7 +120,7 @@
 <!-- Serch and Sort options -->
 <div class="container-fluid">
 	<div class="row">
-		<form:form action="/parts-warehouse-webapp/user-parts-warehouse/${warehouse.id}/search"  commandName="key" cssClass="form-horizontal searchPart">
+		<form:form action="/user-parts-warehouse/${warehouse.id}/search"  commandName="key" cssClass="form-horizontal searchPart">
 						
 			<div class="form-group">
 				<div class="col-sm-2">
